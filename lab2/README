@@ -1,0 +1,8 @@
+Script started on 2015年03月25日 (週三) 00時43分00秒
+]0;F74036132@2015cpp: ~/lab2F74036132@2015cpp:~/lab2$ make./BMI[1Pmake
+g++ -c BMI.cpp
+g++ -c class.cpp
+g++ -o BMI BMI.o class.o
+]0;F74036132@2015cpp: ~/lab2F74036132@2015cpp:~/lab2$ exit
+
+Script done on 2015年03月25日 (週三) 00時43分08秒
