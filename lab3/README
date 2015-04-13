@@ -1,0 +1,41 @@
+Script started on 2015年04月13日 (週一) 20時53分02秒
+]0;F74036132@2015cpp: ~/lab3F74036132@2015cpp:~/lab3$ ./Sort_a
+Unsorted array:
+ 420 370 332 450 391 278 401 342
+ 370 420 332 450 391 278 401 342
+ 332 370 420 450 391 278 401 342
+ 332 370 420 450 391 278 401 342
+ 332 370 391 420 450 278 401 342
+ 278 332 370 391 420 450 401 342
+ 278 332 370 391 401 420 450 342
+ 278 332 342 370 391 401 420 450
+2032
+]0;F74036132@2015cpp: ~/lab3F74036132@2015cpp:~/lab3$ ./Sort_b
+size=1000
+sort(): 0 seconds
+v1/v2 are different.
+insertion_sort(): 0.01 seconds
+v1/v2 are the same.
+
+size=10000
+sort(): 0 seconds
+v1/v2 are different.
+insertion_sort(): 1.29 seconds
+
+size=100000
+sort(): 0.05 seconds
+v1/v2 are different.
+insertion_sort(): 128.64 seconds
+
+size=1000000
+sort(): 0.49 seconds
+v1/v2 are different.
+^Z
+[1]+  Stopped                 ./Sort_b
+]0;F74036132@2015cpp: ~/lab3F74036132@2015cpp:~/lab3$ ;s
+bash: syntax error near unexpected token `;'
+]0;F74036132@2015cpp: ~/lab3F74036132@2015cpp:~/lab3$ ls
+clock_B.cpp  clock_B.h  clock_B.o  file.in  Makefile  README  [0m[01;32mSort_a[0m  sort_A.cpp  [01;32mSort_b[0m  sort_B.cpp  sort_B.o
+]0;F74036132@2015cpp: ~/lab3F74036132@2015cpp:~/lab3$ vi README
+[?1049h[?1h=[1;29r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[29;1H"README" 0L, 0C[>c[1;1H[33m  1 [m
+[1m[34m~                                                                                                                                        [3;1H~                                                                                                                                        [4;1H~                                                                                                                                        [5;1H~                                                                                                                                        [6;1H~                                                                                                                                        [7;1H~                                                                                                                                        [8;1H~                                                                                                                                        [9;1H~                                                                                                                                        [10;1H~                                                                                                                                        [11;1H~                                                                                                                                        [12;1H~                                                                                                                                        [13;1H~                                                                                                                                        [14;1H~                                                                                                                                        [15;1H~                                                                                                                                        [16;1H~                                                                                                                                        [17;1H~                                                                                                                                        [18;1H~                                                                                                                                        [19;1H~                                                                                                                                        [20;1H~                                                                                                                                        [21;
