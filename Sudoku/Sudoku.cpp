@@ -6,45 +6,60 @@
 using namespace std;
 void Sudoku::GiveQuestion()
 {//隨機出題
-	int i ,j=0 ,k ,s ,s1 ,s2 ,ss1[12] ,ss2[12];
-	//排列方式:s交換數字:s1,s2數字位置:ss1,ss2
-	srand(time(NULL));
-	s=rand()%5;//選擇排列方式
-	ifstream in("file.in" ,ios::in);//數獨原版檔
-	ofstream out("file.out" ,ios::out);//數獨隨機版檔
-	if(s==0)//排列方式
-		for(i=0;i<size_su;i++)//相同
-			in>>map[i];
+ 	int i ,j=0 ,k ,s ,s1 ,s2 ,ss1[12] ,ss2[12];
+        srand(time(NULL));
+	s=rand()%5;
+	int l=-1;
+	int model[]={
+	0 ,0 ,7 ,0 ,5 ,6 ,0 ,0 ,0 ,-1 ,-1 ,-1,
+	0 ,0 ,2 ,1 ,0 ,4 ,0 ,8 ,7 ,-1 ,-1 ,-1,
+	4 ,0 ,0 ,2 ,0 ,3 ,0 ,6 ,9 ,-1 ,-1 ,-1,
+	-1, -1, -1, 0 ,6 ,5 ,0 ,7 ,0 ,0 ,8 ,1,
+	-1, -1, -1, 0 ,0 ,0 ,8 ,0 ,4 ,0 ,0 ,7,
+	-1, -1, -1, 0 ,1 ,0 ,0 ,0 ,2 ,3 ,4 ,9,
+	0 ,2 ,3 ,0 ,0 ,7 ,-1 ,-1 ,-1 ,0 ,0 ,0,
+	0 ,0 ,5 ,9 ,0 ,0 ,-1 ,-1 ,-1 ,4 ,0 ,0,
+	0 ,4 ,0 ,0 ,0 ,0 ,-1 ,-1 ,-1 ,6 ,0 ,3,
+	0 ,7 ,8 ,-1 ,-1 ,-1 ,0 ,9 ,6 ,0 ,5 ,2,
+	1 ,0 ,6 ,-1 ,-1 ,-1 ,0 ,2 ,5 ,0 ,0 ,0,
+	0 ,0 ,0 ,-1 ,-1 ,-1 ,1 ,0 ,0 ,0 ,0 ,0};
+	if(s==0)
+		for(i=0;i<size_su;i++)
+		{	l++;
+			map[i]=model[l];}
 	if(s==1)
-		for(i=143;i>=0;i--)//相反
-			in>>map[i];
+		for(i=143;i>=0;i--)
+		{	l++;
+			map[i]=model[l];}
 	if(s==2)
-		for(i=0;i<12;i++)//左到右上到下
+		for(i=0;i<12;i++)
 			for(j=i;j<size_su;j=j+12)
-				in>>map[j];
+			{	l++;
+				map[j]=model[l];}
 	if(s==3)
-		for(i=11;i>=0;i--)//上到下右到左
+		for(i=11;i>=0;i--)
 			for(j=i;j<size_su;j=j+12)
-				in>>map[j];
+			{	l++;
+				map[j]=model[l];}
 	if(s==4)
-		for(i=11;i<size_su;i=i+12)//右到左上到下
+		for(i=11;i<size_su;i=i+12)
 			for(j=i;j>=(i-11);j--)
-				in>>map[j];
+			{	l++;
+				map[j]=model[l];}
 	for(k=0;k<4;k++)
-	{//交換數字
+	{
 		for(i=0;i<12;i++)
 			ss1[i]=-1;
 		for(i=0;i<12;i++)
 			ss2[i]=-1;
-		s1=rand()%9+1;//隨機選擇交換數字
-		do
-		{
-			s2=rand()%9+1;//隨機選擇交換數字
-		}while(s1==s2);//數字相同則再選一次
+		s1=rand()%9+1;
+		do{
+			s2=rand()%9+1;
+		}while(s1==s2);
 		j=0;
 		for(i=0;i<size_su;i++)
 		{
-			if(map[i]==s1)//存取數字位置
+			if(map[i]==s1)
 			{
 				ss1[j]=i;
 				j++;
@@ -53,7 +68,7 @@ void Sudoku::GiveQuestion()
 		j=0;
 		for(i=0;i<size_su;i++)
 		{
-			if(map[i]==s2)//存取數字位置
+			if(map[i]==s2)
 			{
 				ss2[j]=i;
 				j++;
@@ -61,24 +76,23 @@ void Sudoku::GiveQuestion()
 		}
 		for(i=0;i<12;i++)
 			if(ss1[i]!=(-1))
-				map[ss1[i]]=s2;//交換數字
+				map[ss1[i]]=s2;
 		for(i=0;i<12;i++)
 			if(ss2[i]!=(-1))
-				map[ss2[i]]=s1;//交換數字
+				map[ss2[i]]=s1;
 	}
 	for(i=0;i<size_su;i++)
-	{//存檔
-		out<<map[i]<<"\t";
-		if(i%12==11)out<<"\n";
+	{
+		cout<<map[i]<<"\t";
+		if(i%12==11)cout<<"\n";
 	}
 
 }
 void Sudoku::ReadIn()
 {//讀檔
 	int i;
-	ifstream in("file.out" ,ios::in);
 	for(i=0;i<size_su;++i)
-		in>>map[i];
+		cin>>map[i];
 }
 void Sudoku::Init() 
 {// 參數設定

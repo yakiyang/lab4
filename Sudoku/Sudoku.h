@@ -14,9 +14,6 @@ public:
 	void check1();
 	void check2(int);
 	void check3(int ,int ,int* ,int);
-	void check4(int*);
-	int check5(int ,int*);
-	int check6(int ,int ,int* ,int ,int*);
 	bool cellpossiblenum[size_su][9];
 	int st_r[size_su] ;                                // 列位置的起點
 	int st_c[size_su] ;                                // 行位置的起點
