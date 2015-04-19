@@ -1,8 +1,5 @@
-Sudoku:main.o Sudoku.o 
-	g++ -o Sudoku main.o Sudoku.o
+all:Sudoku.o give_question.cpp solve.cpp 
+	g++ -o give_question give_question.cpp Sudoku.o
+	g++ -o solve solve.cpp  Sudoku.o
 Sudoku.o:Sudoku.cpp Sudoku.h
 	g++ -c Sudoku.cpp
-main.o:Sudoku.cpp Sudoku.h
-	g++ -c main.cpp
-clear:
-	rm Sudoku.o main.o

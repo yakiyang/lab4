@@ -203,5 +203,7 @@ void Sudoku::Solve()
 			if(i%12==11)cout<<endl;
 		}
 	}
+	if(T==0)
+		cout<<T<<endl;
 	cout<<endl;
 }
